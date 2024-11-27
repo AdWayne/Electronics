@@ -1,0 +1,544 @@
+html {
+    scroll-behavior: smooth;
+}
+/* Общие стили */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    text-align: center; /* Центрируем текстовый контент */
+    overflow-x: hidden; /* Убираем горизонтальную прокрутку */
+}
+
+/* Header */
+.header {
+    text-align: center;
+    background: linear-gradient(to right, #010101, #000000);
+    color: white;
+    padding: 20px 0;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Кнопка рассылки */
+/* Кнопка рассылки */
+.share-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: inline-block;
+    z-index: 1000;
+  }
+  
+  .share-button {
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: 12px;
+    background-color: #000000;
+  }
+  
+  .share-menu {
+    display: none;
+    position: absolute;
+    bottom: 40px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    z-index: 10;
+    left: -30px;
+  }
+  
+  .share-menu a {
+    display: block;
+    text-decoration: none;
+    color: #333;
+    padding: 5px 10px;
+    font-size: 14px;
+  }
+  
+  .share-menu a:hover {
+    background-color: #f5f5f5;
+  }
+  
+  /* Логика отображения меню */
+  .share-container:hover .share-menu {
+    display: block;
+  }  
+
+  /* Общий фон контейнера */
+  .progress-wrapper {
+    width: 100%;
+    margin: 20px auto;
+  }
+  
+  .bar-container {
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+  }
+  
+  .bar {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .bar-text {
+    margin-bottom: 5px;
+  }
+  
+  .progress-bar {
+    width: 100%;
+    height: 20px;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .progress {
+    width: 0;
+    height: 100%;
+    background-color: #4caf50;
+    transition: width 0.1s linear;
+    border-radius: 10px;
+  }
+  .bar-jsk {
+  background-color: #fff;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%; /* Устанавливаем ширину 100% для каждого отзыва */
+  box-sizing: border-box;
+  }
+  
+  
+  
+  /* Анимация заполнения */
+  @keyframes progressLoop {
+    0% {
+      width: 0%;
+    }
+    100% {
+      width: 100%; /* Заполняет весь прогресс */
+    }
+  }
+  
+/* Навигация */
+.nav {
+    background: #000000;
+    top: 0; /* Сделаем позицию фиксированной сверху */
+    z-index: 9;
+    position: sticky;
+    width: 100%; /* Убедимся, что она будет растягиваться на всю ширину */
+    transition: background-color 0.3s ease; /* Добавим плавное изменение фона */
+    margin-bottom: 10px;
+    height: 100px;
+}
+
+.nav.sticky {
+    background-color: #0098cb; /* При прокрутке цвет изменяется */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Добавим тень для эффекта */
+}
+
+/* Стили для навигации в меню */
+.nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center; /* Центрируем элементы навигации */
+}
+
+.nav ul li {
+    margin: 0 20px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    padding: 15px 10px;
+    display: block;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.nav-link:hover {
+    color: #ff7e5f;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+}
+/* Стили для кнопки фильтров */
+.filters-btn {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
+    display: flex;
+    margin-left: 1150px;
+    margin-top: -50px;
+}
+
+.filters-btn:hover {
+    background-color: #ff5f3f;
+}
+
+.filters {
+    display: none; /* Скрыть фильтры по умолчанию */
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    width: 250px;
+    position: fixed;
+    top: 100px; /* Расположение с верхней части */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+}
+
+/* Дополнительные стили для заголовков и фильтров */
+.filters h3 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.filters label {
+    font-size: 14px;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.filters select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+.apply-filters-btn {
+    background-color: #ff7e5f;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.apply-filters-btn:hover {
+    background-color: #ff5f3f;
+}
+
+/* Корзина */
+.cart {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 200;
+}
+
+.cart-btn {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.cart-btn:hover {
+    background-color: #ff5f3f;
+}
+
+.cart-items {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 50px;
+    right: 0;
+    display: none;
+}
+
+.cart-items h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.cart-items ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.cart-items li {
+    margin-bottom: 10px;
+}
+
+.checkout-btn {
+    background-color: #ff7e5f;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.checkout-btn:hover {
+    background-color: #ff5f3f;
+}
+
+/* Секции */
+section {
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Центрируем содержимое секций */
+}
+
+section h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    position: relative;
+}
+
+section h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: #4facfe;
+    margin: 10px auto;
+    border-radius: 4px;
+}
+
+/* Продукты */
+.products {
+    display: flex;
+    flex-wrap: wrap; /* Позволяем элементам переноситься */
+    justify-content: center; /* Центрируем продукты */
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.product {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    width: 400px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 5;
+}
+
+/* Анимация появления сверху */
+@keyframes slide-down {
+    0% {
+        transform: translateY(-100px); /* Исходное положение сверху */
+        opacity: 0; /* Прозрачность в начале */
+    }
+    100% {
+        transform: translateY(0); /* Конечное положение */
+        opacity: 1; /* Полностью видимый */
+    }
+}
+
+/* Применение анимации к каждому продукту */
+.product {
+    animation: slide-down 0.8s ease-out;
+    animation-fill-mode: forwards; /* Гарантирует, что конечное положение сохраняется */
+    opacity: 0; /* Скрытие до начала анимации */
+}
+
+/* Добавим небольшую задержку для каждого продукта */
+.product:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.product:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.product:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+/* Изображения продуктов */
+.image {
+    height: 350px;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.image img {
+    width: 80%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.image:hover img {
+    transform: scale(1.1);
+}
+
+/* Кнопка покупки */
+.buy-button {
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.buy-button:hover {
+    background: linear-gradient(to right, #feb47b, #ff7e5f);
+    transform: translateY(-3px);
+}
+
+/* Центрирование продуктов */
+.product-list {
+    display: flex;
+    gap: 20px;
+    justify-content: center; /* Центрируем продукты внутри списка */
+    flex-wrap: wrap; /* Позволяем элементам переноситься на следующую строку */
+}
+/* Отзывы */
+.reviews {
+    margin-bottom: 40px;
+}
+
+.review {
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Устанавливаем ширину 100% для каждого отзыва */
+    box-sizing: border-box; /* Чтобы отступы не выходили за пределы блока */
+}
+
+.reviews h3 {
+    font-size: 22px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.stars {
+    color: #ff7e5f;
+}
+
+.star {
+    font-size: 20px;
+}
+
+.review p {
+    font-size: 16px;
+    color: #666;
+}
+
+/* Форма для обратной связи */
+.feedback-form {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 40px; /* Отступ сверху, чтобы форма была ниже отзывов */
+}
+
+.feedback-form h3 {
+    font-size: 22px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.feedback-form label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.feedback-form input,
+.feedback-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    background-color: #fff;
+}
+
+.feedback-form textarea {
+    resize: vertical;
+}
+
+.submit-btn {
+    background-color: #ff7e5f;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #ff5f3f;
+}
+
+/* Размещение отзыва и формы в один ряд */
+.reviews,
+.feedback-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.feedback-form {
+    width: 100%; /* Размер формы */
+}
