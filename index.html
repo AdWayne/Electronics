@@ -7,12 +7,10 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- HEADER -->
     <header class="header">
         <h1>Магазин Электротехники</h1>
         <p>Топовые товары для вашего дома и офиса</p>
         
-        <!-- Навигация категорий -->
     </header>
     <nav class="nav">
         <ul>
@@ -247,7 +245,6 @@
             <p>Товар хороший, но немножко не подошел по размеру.</p>
         </div>
     
-        <!-- Новые отзывы -->
         <div class="review">
             <p><strong>Дмитрий</strong></p>
             <div class="stars">
@@ -284,7 +281,6 @@
         </div>
       </div>        
     <footer>
-    <!-- Форма для обращения -->
     <div class="feedback-form">
         <h3>Оставьте свой отзыв</h3>
         <form action="#">
@@ -311,31 +307,26 @@
       </div>      
     </footer>
     <script>
-        // Получаем элементы кнопки и корзины
         const cartBtn = document.querySelector('.cart-btn');
         const cartItems = document.querySelector('.cart-items');
     
-        // Добавляем обработчик события на кнопку
         cartBtn.addEventListener('click', function() {
-            // Переключаем видимость корзины
             cartItems.style.display = cartItems.style.display === 'block' ? 'none' : 'block';
         });
         const filtersBtn = document.querySelector('.filters-btn');
     const filters = document.querySelector('.filters');
 
-    // Добавляем обработчик события на кнопку
     filtersBtn.addEventListener('click', function() {
-        // Переключаем видимость фильтров
         filters.style.display = filters.style.display === 'block' ? 'none' : 'block';
     });
     document.addEventListener("DOMContentLoaded", () => {
   const progressBar = document.querySelector(".progress");
-  let animationFrame; // Для хранения ID анимации
-  let progress = 0; // Начальное значение прогресса
+  let animationFrame;
+  let progress = 0;
 
   const startProgress = () => {
     if (progress < 100) {
-      progress += 0.5; // Увеличение прогресса
+      progress += 0.5; 
       progressBar.style.width = `${progress}%`;
       animationFrame = requestAnimationFrame(startProgress);
     }
@@ -347,12 +338,10 @@
 
   const progressContainer = document.querySelector(".progress-bar");
 
-  // Начало анимации при наведении
   progressContainer.addEventListener("mouseenter", () => {
     startProgress();
   });
 
-  // Остановка анимации при убирании курсора
   progressContainer.addEventListener("mouseleave", () => {
     stopProgress();
   });
@@ -360,3 +349,4 @@
     </script>    
 </body>
 </html>
+
