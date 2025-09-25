@@ -1,18 +1,16 @@
 html {
     scroll-behavior: smooth;
 }
-/* Общие стили */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
     color: #333;
-    text-align: center; /* Центрируем текстовый контент */
-    overflow-x: hidden; /* Убираем горизонтальную прокрутку */
+    text-align: center; 
+    overflow-x: hidden; 
 }
 
-/* Header */
 .header {
     text-align: center;
     background: linear-gradient(to right, #010101, #000000);
@@ -23,8 +21,6 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Кнопка рассылки */
-/* Кнопка рассылки */
 .share-container {
     position: fixed;
     bottom: 20px;
@@ -75,12 +71,10 @@ body {
     background-color: #f5f5f5;
   }
   
-  /* Логика отображения меню */
   .share-container:hover .share-menu {
     display: block;
   }  
 
-  /* Общий фон контейнера */
   .progress-wrapper {
     width: 100%;
     margin: 20px auto;
@@ -123,46 +117,43 @@ body {
   margin-bottom: 15px;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  width: 100%; /* Устанавливаем ширину 100% для каждого отзыва */
+  width: 100%;
   box-sizing: border-box;
   }
   
   
   
-  /* Анимация заполнения */
   @keyframes progressLoop {
     0% {
       width: 0%;
     }
     100% {
-      width: 100%; /* Заполняет весь прогресс */
+      width: 100%;
     }
   }
   
-/* Навигация */
 .nav {
     background: #000000;
-    top: 0; /* Сделаем позицию фиксированной сверху */
+    top: 0;
     z-index: 9;
     position: sticky;
-    width: 100%; /* Убедимся, что она будет растягиваться на всю ширину */
-    transition: background-color 0.3s ease; /* Добавим плавное изменение фона */
+    width: 100%;
+    transition: background-color 0.3s ease;
     margin-bottom: 10px;
     height: 100px;
 }
 
 .nav.sticky {
-    background-color: #0098cb; /* При прокрутке цвет изменяется */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Добавим тень для эффекта */
+    background-color: #0098cb; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
 }
 
-/* Стили для навигации в меню */
 .nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
-    justify-content: center; /* Центрируем элементы навигации */
+    justify-content: center; 
 }
 
 .nav ul li {
@@ -184,7 +175,7 @@ body {
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 8px;
 }
-/* Стили для кнопки фильтров */
+
 .filters-btn {
     background-color: #ffffff;
     color: rgb(0, 0, 0);
@@ -204,18 +195,17 @@ body {
 }
 
 .filters {
-    display: none; /* Скрыть фильтры по умолчанию */
+    display: none;
     padding: 20px;
     background-color: #f9f9f9;
     border: 1px solid #ddd;
     width: 250px;
     position: fixed;
-    top: 100px; /* Расположение с верхней части */
+    top: 100px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     z-index: 100;
 }
 
-/* Дополнительные стили для заголовков и фильтров */
 .filters h3 {
     font-size: 20px;
     color: #333;
@@ -252,7 +242,6 @@ body {
     background-color: #ff5f3f;
 }
 
-/* Корзина */
 .cart {
     position: fixed;
     top: 20px;
@@ -316,12 +305,11 @@ body {
     background-color: #ff5f3f;
 }
 
-/* Секции */
 section {
     padding: 40px 20px;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Центрируем содержимое секций */
+    align-items: center; 
 }
 
 section h2 {
@@ -343,11 +331,10 @@ section h2::after {
     border-radius: 4px;
 }
 
-/* Продукты */
 .products {
     display: flex;
-    flex-wrap: wrap; /* Позволяем элементам переноситься */
-    justify-content: center; /* Центрируем продукты */
+    flex-wrap: wrap;
+    justify-content: center; 
     gap: 20px;
     padding: 20px 0;
 }
@@ -368,26 +355,23 @@ section h2::after {
     z-index: 5;
 }
 
-/* Анимация появления сверху */
 @keyframes slide-down {
     0% {
-        transform: translateY(-100px); /* Исходное положение сверху */
-        opacity: 0; /* Прозрачность в начале */
+        transform: translateY(-100px);
+        opacity: 0; 
     }
     100% {
-        transform: translateY(0); /* Конечное положение */
-        opacity: 1; /* Полностью видимый */
+        transform: translateY(0);
+        opacity: 1; 
     }
 }
 
-/* Применение анимации к каждому продукту */
 .product {
     animation: slide-down 0.8s ease-out;
-    animation-fill-mode: forwards; /* Гарантирует, что конечное положение сохраняется */
-    opacity: 0; /* Скрытие до начала анимации */
+    animation-fill-mode: forwards; 
+    opacity: 0; 
 }
 
-/* Добавим небольшую задержку для каждого продукта */
 .product:nth-child(1) {
     animation-delay: 0.2s;
 }
@@ -400,7 +384,6 @@ section h2::after {
     animation-delay: 0.6s;
 }
 
-/* Изображения продуктов */
 .image {
     height: 350px;
     width: 100%;
@@ -421,7 +404,6 @@ section h2::after {
     transform: scale(1.1);
 }
 
-/* Кнопка покупки */
 .buy-button {
     background: linear-gradient(to right, #ff7e5f, #feb47b);
     border: none;
@@ -438,14 +420,13 @@ section h2::after {
     transform: translateY(-3px);
 }
 
-/* Центрирование продуктов */
 .product-list {
     display: flex;
     gap: 20px;
-    justify-content: center; /* Центрируем продукты внутри списка */
-    flex-wrap: wrap; /* Позволяем элементам переноситься на следующую строку */
+    justify-content: center; 
+    flex-wrap: wrap; 
 }
-/* Отзывы */
+
 .reviews {
     margin-bottom: 40px;
 }
@@ -456,8 +437,8 @@ section h2::after {
     margin-bottom: 15px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 100%; /* Устанавливаем ширину 100% для каждого отзыва */
-    box-sizing: border-box; /* Чтобы отступы не выходили за пределы блока */
+    width: 100%;
+    box-sizing: border-box; 
 }
 
 .reviews h3 {
@@ -479,13 +460,13 @@ section h2::after {
     color: #666;
 }
 
-/* Форма для обратной связи */
+
 .feedback-form {
     background-color: #f9f9f9;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin-top: 40px; /* Отступ сверху, чтобы форма была ниже отзывов */
+    margin-top: 40px;
 }
 
 .feedback-form h3 {
@@ -531,7 +512,6 @@ section h2::after {
     background-color: #ff5f3f;
 }
 
-/* Размещение отзыва и формы в один ряд */
 .reviews,
 .feedback-form {
     display: flex;
@@ -542,3 +522,4 @@ section h2::after {
 .feedback-form {
     width: 100%; /* Размер формы */
 }
+
